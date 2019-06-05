@@ -16,6 +16,7 @@ import Signup from '../user/signup/Signup';
 import Profile from '../user/profile/Profile';
 import AppHeader from '../common/AppHeader';
 import NotFound from '../common/NotFound';
+import App1 from '../appointment/App1';
 import LoadingIndicator from '../common/LoadingIndicator';
 import PrivateRoute from '../common/PrivateRoute';
 
@@ -112,6 +113,8 @@ class App extends Component {
                   render={(props) => <Profile isAuthenticated={this.state.isAuthenticated} currentUser={this.state.currentUser} {...props}  />}>
                 </Route>
                 <PrivateRoute authenticated={this.state.isAuthenticated} path="/poll/new" component={NewPoll} handleLogout={this.handleLogout}></PrivateRoute>
+                <PrivateRoute authenticated={this.state.isAuthenticated} path="/appointment/new" component={App1} handleLogout={this.handleLogout}></PrivateRoute>
+                
                 <Route component={NotFound}></Route>
               </Switch>
             </div>
